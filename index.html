@@ -24,32 +24,75 @@
         <h2>Overview</h2>
         <div class="overview">
             <p>내가 만들어가는 프로덕트가 사용자에게 최고의 가치가 될 수 있도록 항상 고민하며 성장해 나아갑니다.</p>
-            <p>복잡한 비즈니스 로직을 최선의 방법으로 풀어나가는 것을 좋아하며, 사용하는 누구에게나 도움이 되는 개발을 할 때 가장 큰 보람을 느낍니다.</p>
-            <p>새롭게 알게 된 지식을 함께 공유하는 것을 좋아하며, 이것이 팀의 성장에 도움이 될 것이라 믿습니다.</p>
-            <p>MSA 환경에서의 웹 백엔드 서버 개발 및 배포 파이프라인 구성 경험이 풍부하며, <strong>새로운 기술 스택(Kotlin 등)에도 빠르게 적응하여 주도적으로 실무에 적용하는 역량</strong>을 갖추고 있습니다.</p>
+            <p>Java/Kotlin + Spring Boot 기반 MSA 환경에서 <strong>결제·주문·배송비·재고처럼 금액과 수량이 정확히 맞아야 하는 커머스 핵심 도메인</strong>을 설계하고 운영해 왔습니다. 외부 PG 직접 연동, 다회차 부분취소, 동시 결제 시 재고 차감 등 <strong>데이터 정합성과 동시성 문제</strong>를 푸는 일을 좋아합니다.</p>
+            <p>APM과 로그로 문제의 원인을 좁히고, 해결책의 트레이드오프를 따져본 뒤, 테스트로 검증할 수 있는 코드로 풀어내는 것을 중요하게 생각합니다.</p>
+            <p>새롭게 알게 된 지식을 팀과 공유하는 것을 좋아하며, Claude Code 등 AI 코딩 에이전트를 코드 작성·리뷰·문서화·이슈 분석에 적극 활용해 개발 생산성을 높이고 있습니다.</p>
         </div>
 
         <h2>Major Tech Stacks</h2>
         <div class="section-block">
-            <span class="tag">Java</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">Python</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Django</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">OpenSearch</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">AWS (ECS, RDS, S3, Batch)</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">DataDog</span>
+            <div class="stack-row">
+                <div class="stack-label">Language</div>
+                <div class="stack-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Kotlin</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">TypeScript</span>
+                </div>
+            </div>
+            <div class="stack-row">
+                <div class="stack-label">Backend</div>
+                <div class="stack-tags">
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Spring Data JPA (Hibernate)</span>
+                    <span class="tag">QueryDSL</span>
+                    <span class="tag">MyBatis</span>
+                    <span class="tag">Spring WebFlux</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Django</span>
+                </div>
+            </div>
+            <div class="stack-row">
+                <div class="stack-label">Data</div>
+                <div class="stack-tags">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Redis (Redisson)</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">DynamoDB</span>
+                    <span class="tag">OpenSearch</span>
+                </div>
+            </div>
+            <div class="stack-row">
+                <div class="stack-label">Messaging</div>
+                <div class="stack-tags">
+                    <span class="tag">RabbitMQ (DLX, Retry)</span>
+                    <span class="tag">Spring Application Events</span>
+                </div>
+            </div>
+            <div class="stack-row">
+                <div class="stack-label">Infra / Ops</div>
+                <div class="stack-tags">
+                    <span class="tag">AWS (ECS, EKS, RDS, S3, Batch, Lambda)</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">GitLab CI</span>
+                    <span class="tag">DataDog APM</span>
+                </div>
+            </div>
+            <div class="stack-row">
+                <div class="stack-label">Test</div>
+                <div class="stack-tags">
+                    <span class="tag">JUnit5</span>
+                    <span class="tag">Mockito</span>
+                    <span class="tag">MockK</span>
+                    <span class="tag">Testcontainers</span>
+                </div>
+            </div>
         </div>
 
         <h2>Careers</h2>
-        
+
         <div class="section-block">
             <div class="header-row">
                 <div class="date">2025년 2월 – 현재</div>
@@ -58,10 +101,12 @@
                 <div class="clear"></div>
             </div>
             <ul>
-                <li>수산시장 및 산지마켓 커머스 플랫폼 핵심 API 및 백엔드 시스템(결제/주문/택배) 개발 및 유지보수</li>
-                <li>디지털 온누리상품권, 토스페이먼츠 등 다양한 결제 수단 연동 및 복합 정산 로직 구축</li>
-                <li>DataDog APM을 활용한 에러 모니터링 체계 구축 및 슬로우 쿼리(N+1) 성능 최적화 주도</li>
-                <li>Kotlin 기반의 MSA 환경에서 주도적인 백엔드 아키텍처 설계 및 비즈니스 로직 고도화</li>
+                <li>수산시장·산지마켓 커머스 플랫폼의 결제·주문·택배·재고 백엔드 개발 및 운영 (Java/Kotlin, Spring Boot 기반 MSA: 수산시장·결제·산지·계정 서버)</li>
+                <li>한국조폐공사 디지털 온누리상품권 PG 직접 연동 → <strong>결제 완료 주문의 약 36%를 차지하는 주요 결제수단으로 안착</strong>, 토스페이먼츠·페이코 결제수단 추가</li>
+                <li>수산시장 택배 주문 시스템 신규 구축 및 상품별 배송비(묶음배송·조건부 무료·수량별 반복부과) 체계 재설계, 상품/옵션/배송비 단위 다회차 부분취소 개발</li>
+                <li>원자적 조건부 UPDATE 기반 재고 차감, Redisson 분산 락, RabbitMQ 재큐잉/DLX를 활용해 결제·재고 데이터 정합성 확보</li>
+                <li>DataDog APM 기반 N+1 개선(API 지연 300~500ms 단축), 에러 로그 레벨 체계화, 산지 서버 Spring Boot 2.5 → 3.2 마이그레이션, 개발계 배포 시간 16분 → 10분 단축</li>
+                <li>재고·결제·온누리 연동 등 핵심 로직에 <strong>테스트 클래스 32개, 테스트 케이스 210여 개</strong> 작성 (JUnit5, Mockito, MockK, Testcontainers 기반 MySQL·Redis·RabbitMQ 통합 테스트)</li>
             </ul>
         </div>
 
@@ -95,22 +140,157 @@
 
         <div class="section-block">
             <div class="header-row">
-                <div class="date">2025년 4월 – 2026년 3월</div>
-                <div class="title-text">커머스 플랫폼 핵심 시스템 및 모니터링 고도화</div>
-                <div class="subtitle-text">더파이러츠 (인어교주해적단)</div>
+                <div class="date">2025년 10월 – 현재</div>
+                <div class="title-text">디지털 온누리상품권 PG 직접 연동 및 결제·부분취소</div>
+                <div class="subtitle-text">더파이러츠 · 결제 서버 (Kotlin)</div>
                 <div class="clear"></div>
             </div>
             <p class="bold">Overview</p>
             <ul>
-                <li>디지털 온누리상품권 및 토스페이먼츠 결제 연동, 택배/배송비 체계 전면 개편</li>
-                <li>산지/수산 커머스의 상품 노출 통계 시스템 구축 및 OpenSearch 검색 엔진 최적화</li>
+                <li>한국조폐공사(KOMSCO) 디지털 온누리상품권 결제를 PG 대행사 없이 직접 연동 (API 9종, 응답코드 47종을 도메인 예외로 매핑, AES 암호화·SHA-512 해시 적용)</li>
+                <li>결제 플로우(주문접수 → 결제요청 → 리다이렉트 → 승인 콜백 → 결제완료) 설계, 온누리 결제 요건인 CI(본인확인정보) 수집·검증 플로우를 계정 서버(WebFlux·R2DBC)와 연계</li>
+                <li>토스페이먼츠·페이코 결제수단 추가 (PortOne 채널 연동)</li>
+                <li><strong>성과: 2026년 1월 이후 결제 완료 주문 55,822건 중 20,161건(약 36%)이 온누리 결제로 처리</strong></li>
             </ul>
             <p class="bold">Issues & Challenges</p>
             <ul>
-                <li><span class="highlight">[새로운 언어 적응 및 복잡한 정산/결제 시스템 구축]</span> 입사 직후 Kotlin 기반 MSA 환경(결제, 계정, 산지 서버)에 빠르게 적응하여, 수산물 특성상 빈번한 부분 보상 니즈(상품/옵션/배송비 단위)를 해결하기 위한 부분취소 기능을 구축. 기존 실시간 온누리 정산 API의 부하를 매일 00시 일괄 정산 배치로 변경하여 서버 CPU를 안정화함.</li>
-                <li><span class="highlight">[배송비 체계 개편 및 쿼리 최적화]</span> 기존 한계를 극복하고자 묶음배송, 조건부 무료배송 등 복합 정책을 지원하는 신규 배송비 DB 모델을 설계함. 또한, DataDog APM을 활용해 N+1 쿼리를 식별하여 응답 속도를 300~500ms 단축시키고, 5XX 에러 전수 분석으로 모니터링 신뢰도를 대폭 향상시킴.</li>
+                <li><span class="highlight">[외부 PG 승인과 내부 결제 상태의 정합성 확보]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>승인 결과가 콜백으로 전달되는 구조라 중복 콜백, 브라우저 뒤로가기 후 재결제, 승인 금액 불일치 시 PG와 내부 DB 상태가 어긋날 위험이 있었음</li>
+                        <li><span class="label solution">해결</span>결제 상태 머신(CREATED → READY → CONFIRM → PAID/FAILED → CANCELLED) 기반으로 이미 처리된 콜백은 멱등하게 무시하고, 승인 직후 거래조회 API로 승인 금액·응답코드를 재검증해 불일치 시 자동 보상 취소. 모든 승인/취소를 ‘원거래 → 신규 거래’ 체인 형태의 거래 이력 테이블에 기록하고, 승인 완료 후 RabbitMQ로 주문 완료 이벤트를 발행해 주문 처리와 분리</li>
+                        <li><span class="label result">결과</span>결제 이상 케이스를 수동 개입 없이 보상 취소로 정리하고, 거래 이력만으로 회차별 승인·취소 금액을 재구성할 수 있는 추적성 확보</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[부분취소 방식 재설계: ‘전체취소 후 재승인’ → 부분취소 API]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>조폐공사 기존 API에 따른 1차 구현(전체취소 후 잔액 재승인)은 사용자 재인증이 필요했고, 취소·재승인 두 단계 중 한쪽만 실패해도 상태가 어긋날 수 있었음</li>
+                        <li><span class="label solution">해결</span>조폐공사 부분취소 API 런칭 후 해당 API 기반으로 전환. 취소 금액이 아닌 ‘남길 금액’ 기준 규격에 맞춰 취소가능잔액(결제금액 − 누적환불)을 결제 엔티티에서 검증하고, 회차마다 직전 거래번호를 체인으로 연결해 복수 회차 부분취소 지원. 잔액 0원 부분취소가 불가한 PG 제약은 전체취소 경로로 분기</li>
+                        <li><span class="label result">결과</span>사용자 재인증 없이 운영 콘솔에서 상품/옵션/배송비 단위 다회차 부분취소 처리 가능</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[실시간 정산 조회 부하 → 일별 배치 적재 전환]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>어드민에서 정산 내역을 조회할 때마다 조폐공사 정산 API를 실시간 호출해 결제 서버 CPU 부하 발생</li>
+                        <li><span class="label solution">해결</span>정산 데이터는 매일 오전 중에 조폐공사 측에서 배치로 적재되는 것을 착안해 AWS Batch(Python) 일별 배치로 전환. 500건 단위 페이지 수집, 기적재 거래번호 선필터 + INSERT IGNORE로 재실행·기간 백필 시에도 중복 없이 적재</li>
+                        <li><span class="label result">결과</span>어드민 조회·엑셀 다운로드를 DB 기반으로 전환해 결제 서버 CPU 안정화</li>
+                    </ul>
+                </li>
             </ul>
-            <p><span class="bold">Tech Stacks:</span> Kotlin, Spring Boot, PostgreSQL, OpenSearch, DataDog, AWS (Batch, Lambda)</p>
+            <p><span class="bold">역할:</span> 온누리 연동 백엔드 단독 설계·구현 (연동 서비스·클라이언트·API 코드 대부분 직접 작성), 한국조폐공사·포트원 기술 커뮤니케이션 및 운영팀 정책(잔액 부족 시 환불 프로세스, 가맹점 등록 자동화) 수립</p>
+            <p><span class="bold">Tech Stacks:</span> Kotlin, Spring Boot 3, Spring Data JPA, MySQL (Aurora), RabbitMQ, OpenFeign, AWS Batch (Python), JUnit5, MockK</p>
+        </div>
+
+        <div class="section-block">
+            <div class="header-row">
+                <div class="date">2025년 2월 – 2026년 4월</div>
+                <div class="title-text">수산시장 택배 주문 시스템 및 배송비·부분취소 체계 설계</div>
+                <div class="subtitle-text">더파이러츠 · 수산시장 서버 (Java)</div>
+                <div class="clear"></div>
+            </div>
+            <p class="bold">Overview</p>
+            <ul>
+                <li>퀵·포장·당일배송만 지원하던 수산시장에 택배 주문 전 과정(주문 → 송장 → 배송추적 → 구매확정 → 취소)을 신규 구축하고 오픈까지 20+ 하위 백로그 총괄</li>
+                <li>‘가게당 배송비 1회 부과’ 방식을 상품별 배송비 정책(묶음배송 그룹, 조건부 무료, 수량별 반복부과, MAX/MIN 계산)으로 전면 재설계</li>
+                <li>상품/옵션/배송비 단위 다회차 부분취소 신규 개발, PG사 직접 취소 → 내부 콘솔 취소로 전환해 정산 정합성 확보</li>
+            </ul>
+            <p class="bold">Issues & Challenges</p>
+            <ul>
+                <li><span class="highlight">[택배 주문 도메인 모델링]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>택배는 분할 발송·합포장, 송장 단위 배송 추적, 회차별 취소 등 기존 즉시배송 주문과 다른 요구사항을 가짐</li>
+                        <li><span class="label solution">해결</span>주문·주문상품·송장·상품-송장 매핑·취소·이력 등 테이블 8종 설계. 상품과 송장을 수량을 포함한 N:M으로 매핑해 분할·합포장을 지원하고, 배송비를 별도 주문상품 라인으로 저장해 배송비 단위 환불이 가능하도록 함. 접수·발송·배송완료·구매확정·취소 상태 전이는 엔티티 메서드로 캡슐화</li>
+                        <li><span class="label result">결과</span>스윗트래커 배송 추적 연동과 배송완료 자동 처리까지 포함해 택배 주문 오픈, 고객 알림톡·송장 엑셀 일괄 등록 등 운영 흐름 전반 지원</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[복합 배송비 정책 모델 설계]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>가게당 1회 부과 방식으로는 묶음배송 불가 상품, 금액·수량 조건부 무료배송, 수량별 반복 부과 같은 판매자 요구를 표현할 수 없었음</li>
+                        <li><span class="label solution">해결</span>배송비 그룹(계산 방식 MAX/MIN, 무료 우선순위)과 상품별 정책(기본 배송비, 조건부 무료, 반복 부과 단위)을 분리 모델링하고 Enum 기반 정책 타입으로 계산 로직 구현. 주문 시점의 무료배송 사유(무료 상품/금액 조건/수량 조건)를 스냅샷으로 저장해 이후 부분취소 시 배송비 재부과·환불 판단 근거로 사용하고, 그룹 내 전 상품이 취소될 때만 묶음 배송비를 환불</li>
+                        <li><span class="label result">결과</span>정책 미등록 상품은 기존 가게 배송비로 폴백하도록 설계해 운영 중인 서비스에서 신규 정책 테이블로 점진 마이그레이션</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[다회차 부분취소 정합성]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>수산물 특성상 상품·옵션·배송비 단위 부분 보상이 잦았으나, PG사 관리 화면에서 직접 취소해 내부 주문·정산 데이터에 반영되지 않았음</li>
+                        <li><span class="label solution">해결</span>콘솔 부분취소에 Redisson 기반 분산 락(fail-fast)을 적용해 동일 주문상품의 중복 취소 요청을 차단하고, 결제총액 − 누적환불 잔액과 항목별 환불가능액(최종가 − 기환불액)을 검증. 회차마다 취소 이력을 적재해 복수 회차를 지원하고, 잔액 전액 취소 요청은 전체취소로 전환</li>
+                        <li><span class="label result">결과</span>퀵·포장·당일배송·택배 전 주문유형에 부분취소를 적용하고 알림톡·엑셀·사용자 주문내역까지 일관되게 반영</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><span class="bold">역할:</span> 택배 주문 테이블 설계부터 주문·송장·배송비·취소 백엔드 전 과정 주도, FE·모바일·PM과 협업</p>
+            <p><span class="bold">Tech Stacks:</span> Java 11, Spring Boot 2.5, Spring Data JPA (Hibernate), QueryDSL, MyBatis, MySQL, Redis (Redisson), SweetTracker API</p>
+        </div>
+
+        <div class="section-block">
+            <div class="header-row">
+                <div class="date">2026년 4월 – 2026년 9월</div>
+                <div class="title-text">재고 관리 도입 및 결제 처리 동시성 제어</div>
+                <div class="subtitle-text">더파이러츠 · 수산시장 서버 (Java)</div>
+                <div class="clear"></div>
+            </div>
+            <p class="bold">Overview</p>
+            <ul>
+                <li>가격(옵션) 단위 재고 관리 신규 도입: 장바구니·결제페이지 재고 체크 및 재조정, 결제완료 시 차감, 취소 시 복구(배송중 이후·부분취소 시 미복구 정책), 품절 알림</li>
+                <li>RabbitMQ 기반 결제완료/실패 메시지 처리의 멱등성·재시도 구조 개선</li>
+            </ul>
+            <p class="bold">Issues & Challenges</p>
+            <ul>
+                <li><span class="highlight">[동시 결제 시 재고 초과 차감 방지]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>같은 상품에 결제가 몰리면 ‘조회 후 엔티티 수정’ 방식은 Lost Update로 초과 판매가 발생할 수 있고, 결제완료가 MQ 컨슈머와 카드 리다이렉트 두 경로로 들어와 차감 시점이 경로마다 달랐음</li>
+                        <li><span class="label solution">해결</span>재고 차감을 원자적 조건부 UPDATE(<code>STOCK = STOCK - q WHERE STOCK &gt;= q</code>)로 수행하고, 영향 행이 0이면 재고 부족 예외로 결제 트랜잭션 전체를 롤백(별도 보상 트랜잭션 불필요)한 뒤 즉시 환불. 여러 옵션을 차감할 때는 항상 ID 오름차순으로 갱신해 데드락 가능성을 낮추고, 두 결제완료 경로 모두 멱등성 체크 직후·부수효과 이전에 차감하도록 통일</li>
+                        <li><span class="label result">결과</span>품절 도달 시점에만 정확히 1회 품절 알림 발행, 차감·복구·재고 체크 로직을 약 40개 테스트 케이스로 검증</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[결제 완료 메시지 처리의 멱등성과 재시도]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>결제완료 메시지 처리 중 락 획득에 실패하면 재처리되지 않았고, 결제 성공/실패 메시지가 동시에 처리되면 주문 상태가 꼬일 수 있었음</li>
+                        <li><span class="label solution">해결</span>이미 결제된 주문은 건너뛰는 멱등 처리, 분산 락 획득 실패 시 예외를 재전파해 재큐잉(최대 3회 후 DLX 이동). 결제 실패 핸들러가 성공 핸들러와 동일한 락 키를 사용하도록 하고 실패 상태 기록은 첫 시도에만 수행</li>
+                        <li><span class="label result">결과</span>일시적 경합은 자동 재시도로 흡수하고, 반복 실패 메시지는 DLX로 격리해 유실 없이 추적</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><span class="bold">역할:</span> 재고 도메인 설계·구현 및 결제 메시지 처리 개선 주도</p>
+            <p><span class="bold">Tech Stacks:</span> Java 11, Spring Boot, Spring Data JPA, MySQL, Redis (Redisson), RabbitMQ, JUnit5, Mockito, Testcontainers</p>
+        </div>
+
+        <div class="section-block">
+            <div class="header-row">
+                <div class="date">2025년 7월 – 2026년 3월</div>
+                <div class="title-text">성능·관측성 개선 및 레거시 업그레이드</div>
+                <div class="subtitle-text">더파이러츠 · 수산시장 / 산지 / 계정 서버</div>
+                <div class="clear"></div>
+            </div>
+            <p class="bold">Overview</p>
+            <ul>
+                <li>DataDog APM 기반 N+1·슬로우 쿼리 개선, 에러 로그 레벨 체계화 및 5XX 에러 전수 분석</li>
+                <li>산지 서버 Spring Boot 2.5 → 3.2 / 계정 서버 3.0 → 3.2 업그레이드, 개발계 배포 시간 단축, Lambda → AWS Batch 이전</li>
+            </ul>
+            <p class="bold">Issues & Challenges</p>
+            <ul>
+                <li><span class="highlight">[N+1 쿼리 개선]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>DataDog APM Recommendations에서 수산 앱 댓글, 콘솔 주문관리 리스트, 산지 메인 판매자·시장 탭 등에 N+1 쿼리가 다수 감지되고 DB CPU 알림 발생</li>
+                        <li><span class="label solution">해결</span>to-one 연관은 QueryDSL fetch join, 다건 조회는 IN 절 일괄 조회 후 Map 그룹핑, 주문별 배송비 취소금액은 GROUP BY 집계 Projection으로 한 번에 계산. 판매글 품절 필터의 상관 서브쿼리 COUNT 2개를 NOT EXISTS 단일 서브쿼리로 재작성하고, AS-IS/TO-BE 쿼리 분석 문서를 팀에 공유</li>
+                        <li><span class="label result">결과</span>수산 앱 댓글·산지 메인 시장 탭 등 주요 API 지연 약 300~500ms 단축 (기존 1000~1500ms)</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[에러 모니터링 신뢰도 개선]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>API 에러가 DataDog에 INFO 레벨로 적재되어 실제 장애와 클라이언트 오류를 구분할 수 없었음</li>
+                        <li><span class="label solution">해결</span>트레이싱 인터셉터에서 5XX → ERROR, 4XX → WARN으로 분류하도록 전 서비스에 적용하고, 에러 채널의 5XX를 백엔드 5명이 서비스별로 분담해 전수 분석, 클라이언트 원인 오류는 4XX로 전환</li>
+                        <li><span class="label result">결과</span>ERROR 알림이 실제 장애를 의미하도록 정리되어 대응 우선순위 판단이 명확해짐</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[Spring Boot 3 마이그레이션]</span>
+                    <ul class="issue-detail">
+                        <li><span class="label problem">문제</span>산지 서버가 지원이 종료된 Spring Boot 2.5 / Kotlin 1.6에 머물러 있었음</li>
+                        <li><span class="label solution">해결</span>Spring Boot 3.2·Kotlin 1.9·Gradle 8로 업그레이드하며 javax → jakarta 전환(127개 파일), Hibernate 6에서 제거된 SQLFunctionTemplate 대신 FunctionContributions로 MySQL 전문검색(MATCH … AGAINST) 함수 재등록, Apache HttpClient 5 전환 및 커넥션/응답 타임아웃 명시, springdoc 2.x로 Swagger 문서 정비</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">[배포·배치·코드 정리]</span> 개발계 배포의 이미지 pull 정책·배포 체크 방식 개선으로 평균 16분 → 10분(약 40%) 단축. Lambda에서 스케줄 실행되던 Python 코드를 AWS Batch로 이전해 실행 안정성·모니터링 가시성 확보 및 미사용 Lambda 정리. 흩어진 알림톡 템플릿 64종을 Enum 기반으로 통합하고 레거시 메시지 발송 코드 제거</li>
+            </ul>
+            <p><span class="bold">Tech Stacks:</span> Java, Kotlin, Spring Boot 3, JPA/Hibernate 6, QueryDSL, DataDog APM, GitLab CI, AWS Batch</p>
         </div>
 
         <div class="section-block">
