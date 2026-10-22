@@ -26,7 +26,7 @@
             <p>내가 만들어가는 프로덕트가 사용자에게 최고의 가치가 될 수 있도록 항상 고민하며 성장해 나아갑니다.</p>
             <p>Java/Kotlin + Spring Boot 기반 MSA 환경에서 <strong>결제·주문·배송비·재고처럼 금액과 수량이 정확히 맞아야 하는 커머스 핵심 도메인</strong>을 설계하고 운영해 왔습니다. 외부 PG 직접 연동, 다회차 부분취소, 동시 결제 시 재고 차감 등 <strong>데이터 정합성과 동시성 문제</strong>를 푸는 일을 좋아합니다.</p>
             <p>APM과 로그로 문제의 원인을 좁히고, 해결책의 트레이드오프를 따져본 뒤, 테스트로 검증할 수 있는 코드로 풀어내는 것을 중요하게 생각합니다.</p>
-            <p>새롭게 알게 된 지식을 팀과 공유하는 것을 좋아하며, Claude Code 등 AI 코딩 에이전트를 코드 작성·리뷰·문서화·이슈 분석에 적극 활용해 개발 생산성을 높이고 있습니다.</p>
+            <p>Claude Code를 주 개발 도구로 사용하며, <strong>AI 에이전트가 작성한 코드를 커버리지 게이트와 통합 테스트로 검증하는 방식</strong>으로 개발합니다. 사이드 프로젝트로 MCP 서버, LLM 모델 폴백 체인, 로컬 이미지 생성 파이프라인을 직접 구축하며 AI 활용 범위를 넓혀가고 있고, 새롭게 알게 된 지식을 팀과 공유하는 것을 좋아합니다.</p>
         </div>
 
         <h2>Major Tech Stacks</h2>
@@ -89,6 +89,16 @@
                     <span class="tag">Testcontainers</span>
                 </div>
             </div>
+            <div class="stack-row">
+                <div class="stack-label">AI / LLM</div>
+                <div class="stack-tags">
+                    <span class="tag">Claude Code</span>
+                    <span class="tag">MCP (FastMCP)</span>
+                    <span class="tag">Google AI Studio (Gemini, Gemma)</span>
+                    <span class="tag">ComfyUI</span>
+                    <span class="tag">OpenClaw</span>
+                </div>
+            </div>
         </div>
 
         <h2>Careers</h2>
@@ -106,7 +116,7 @@
                 <li>수산시장 택배 주문 시스템 신규 구축 및 상품별 배송비(묶음배송·조건부 무료·수량별 반복부과) 체계 재설계, 상품/옵션/배송비 단위 다회차 부분취소 개발</li>
                 <li>원자적 조건부 UPDATE 기반 재고 차감, Redisson 분산 락, RabbitMQ 재큐잉/DLX를 활용해 결제·재고 데이터 정합성 확보</li>
                 <li>DataDog APM 기반 N+1 개선(API 지연 300~500ms 단축), 에러 로그 레벨 체계화, 산지 서버 Spring Boot 2.5 → 3.2 마이그레이션, 개발계 배포 시간 16분 → 10분 단축</li>
-                <li>재고·결제·온누리 연동 등 핵심 로직에 <strong>테스트 클래스 32개, 테스트 케이스 210여 개</strong> 작성 (JUnit5, Mockito, MockK, Testcontainers 기반 MySQL·Redis·RabbitMQ 통합 테스트)</li>
+                <li>Claude Code 기반 AI 에이전트 개발 워크플로우에서 재고·결제·온누리 연동 등 핵심 로직에 <strong>테스트 클래스 32개, 테스트 케이스 210여 개</strong> 작성 (@AiTest 커버리지 게이트, JUnit5, Mockito, MockK, Testcontainers 기반 MySQL·Redis·RabbitMQ 통합 테스트)</li>
             </ul>
         </div>
 
@@ -211,8 +221,8 @@
                 </li>
                 <li><span class="highlight">[다회차 부분취소 정합성]</span>
                     <ul class="issue-detail">
-                        <li><span class="label problem">문제</span>수산물 특성상 상품·옵션·배송비 단위 부분 보상이 잦았으나, PG사 관리 화면에서 직접 취소해 내부 주문·정산 데이터에 반영되지 않았음</li>
-                        <li><span class="label solution">해결</span>콘솔 부분취소에 Redisson 기반 분산 락(fail-fast)을 적용해 동일 주문상품의 중복 취소 요청을 차단하고, 결제총액 − 누적환불 잔액과 항목별 환불가능액(최종가 − 기환불액)을 검증. 회차마다 취소 이력을 적재해 복수 회차를 지원하고, 잔액 전액 취소 요청은 전체취소로 전환</li>
+                        <li><span class="label problem">문제</span>수산물 특성상 중량 부족·품질 문제 등으로 상품·옵션·배송비 단위 부분 환불이 잦았으나, 콘솔에는 전액 취소만 있어 PG사 관리 화면에서 직접 환불했고 그 내역이 내부 주문·정산 데이터에 남지 않았음</li>
+                        <li><span class="label solution">해결</span>회차별 취소 이력 테이블을 설계하고, PG 호출 전에 항목별 환불가능액(최종가 − 기환불액)과 주문 잔액(결제총액 − 누적환불)을 검증. 부분취소 여부를 주문 상태값이 아닌 취소 이력으로 판단하도록 바꿔 배송완료·구매확정 처리 시 상태가 덮어써지던 문제를 해결하고, 잔액과 같은 금액의 요청은 서버가 판단해 전체취소로 전환. PortOne(취소액 기준)과 온누리(남길 금액 기준, 잔액 0원 부분취소 불가)의 규격 차이를 분기 처리하고, Redisson 분산 락(fail-fast)으로 동일 주문상품의 중복 취소 요청 차단</li>
                         <li><span class="label result">결과</span>퀵·포장·당일배송·택배 전 주문유형에 부분취소를 적용하고 알림톡·엑셀·사용자 주문내역까지 일관되게 반영</li>
                     </ul>
                 </li>
@@ -349,6 +359,24 @@
             <p><span class="bold">Tech Stacks:</span> FastAPI, Apollo GraphQL Server, TypeScript, Keycloak, K8s, AWS EKS/DynamoDB/DocumentDB</p>
         </div>
 
+        <h2>AI Agent & LLM</h2>
+        <div class="section-block">
+            <p class="bold">실무: Claude Code 기반 에이전트 개발 (더파이러츠, 2026년 6월 – 현재)</p>
+            <ul>
+                <li>Claude Code를 주 개발 도구로 사용. 팀 공통 에이전트 규약(AGENTS.md, 테스트 생성·DB 마이그레이션·코드 리뷰 Skills)에 맞춰 기능 구현, 코드 리뷰, 운영 이슈 분석 수행</li>
+                <li><span class="highlight">[@AiTest 커버리지 게이트]</span> 에이전트가 main 코드를 수정하면 Testcontainers(MySQL·Redis·RabbitMQ) 기반 <code>@AiTest</code> 통합 테스트를 생성하고, 수정된 메서드의 JaCoCo 커버리지가 100%가 될 때까지 테스트를 보강해야 작업 완료로 인정하는 규칙 아래에서 개발. AI가 만든 코드를 ‘믿는’ 대신 테스트로 검증해 결과물의 한계를 보완</li>
+                <li>재고 차감/복구, 결제페이지 재고 검증, 온누리 가맹점 확인·상태 기록, 송장 등록, 매출 집계 등 핵심 로직에 테스트 클래스 32개, 테스트 케이스 210여 개 작성</li>
+            </ul>
+            <p class="bold">사이드 프로젝트</p>
+            <ul>
+                <li><span class="bold">YM Library 카탈로그 챗봇 & MCP 서버</span> (2025.11 – 2026.05) : 영상 백업 카탈로그 서비스에 자연어 검색 챗봇과 MCP 서버를 추가. ‘영상 위치 찾기’, ‘장면 검색’ 등 도구 4종을 하나의 검색 서비스로 구현하고, 기존 백엔드의 HTTP 챗봇 API와 FastMCP stdio 서버(Claude Desktop·Cursor 등에서 사용)가 같은 로직을 공유하도록 구성. Google AI Studio Gemma 4 31B의 function calling을 사용하고 응답 실패 시 축약 프롬프트로 재시도. (FastAPI, MySQL, MCP, React)</li>
+                <li><span class="bold">교육 콘텐츠 주간 리포트 봇</span> : 여러 교육 콘텐츠 사이트를 크롤링해 매주 리포트로 자동 발행. Gemini API 무료 티어의 일일 요청 한도(RPD)에 도달하면 한 단계 낮은 모델로 자동 전환하는 모델 폴백 체인으로 비용 없이 운영</li>
+                <li><span class="bold">로컬 이미지 생성 API</span> : Qwen-Image 2.1과 ComfyUI를 Python 백엔드 서버와 결합해 Higgsfield API처럼 호출할 수 있는 무료 이미지 생성 툴을 구축해 사용</li>
+                <li><span class="bold">AI 에이전트 기반 취미 게임 개발</span> (2026.09 – 현재) : Claude Code 멀티 에이전트(서브에이전트) 구성으로 Godot 4 게임을 프롬프트 프로그래밍으로 개발 중. 게임 에셋은 위 이미지 생성 툴로 제작</li>
+                <li><span class="bold">뉴스 브리핑 자동화</span> : OpenClaw(오픈소스 AI 에이전트)로 매일 오전 뉴스 브리핑을 생성·전달하는 시스템 구축</li>
+            </ul>
+        </div>
+
         <h2>Side Projects</h2>
         <div class="section-block">
             <ul>
@@ -361,6 +389,7 @@
         <h2>Experiences & Educations</h2>
         <div class="section-block">
             <ul>
+                <li><span class="bold">Google Study Jam:</span> 현재 서비스 중인 AI 관련 API들을 탐색하고 실무·서비스 활용 방안 모색</li>
                 <li><span class="bold">멘토링 및 교육 기획:</span> IT 관심 고등/대학생 대상 CS 및 Git 멘토링 (2020.02 - 현재), Youtube '따배런' 채널 인프라 교육 기획 및 QA 진행 (2020.09 - 2021.12)</li>
                 <li><span class="bold">도서 및 K-MOOC:</span> '쉽게 배우는 소프트웨어공학 2판' 보조 집필 (2019.10 - 2020.01), K-MOOC 해당 과목 TA 및 실습 코드 제공 (2019.09 - 2019.12)</li>
                 <li><span class="bold">공주대학교 소프트웨어전공:</span> 15.03 ~ 21.02. 학부 전공 대표 역임, 캡스톤 프로젝트 전공 학술제 은상 수상</li>
